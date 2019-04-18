@@ -1,0 +1,30 @@
+﻿using CareerCloud.Pocos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CareerCloud.WCF
+{
+	[ServiceContract]
+	public interface ISystem
+	{
+		[OperationContract]
+		void AddSystemCountryCode(SystemCountryCodePoco item);
+		List<SystemCountryCodePoco> GetAllSystemCountryCode();
+		SystemCountryCodePoco GetSingleSystemCountryCode(Guid Id);
+		void RemoveSystemCountryCode(SystemCountryCodePoco[] item);
+		void UpdateSystemCountryCode(SystemCountryCodePoco[] item);
+
+
+
+		[OperationContract]
+		void AddSystemLanguageCode(SystemLanguageCodePoco item);
+		List<SystemLanguageCodePoco> GetAllSystemLanguageCode();
+		SystemLanguageCodePoco GetSingleSystemLanguageCode(Guid Id);
+		void RemoveSystemLanguageCode(SystemLanguageCodePoco[] item);
+		void UpdateSystemLanguageCode(SystemLanguageCodePoco[] item);
+	}
+}
